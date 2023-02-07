@@ -30,19 +30,18 @@ export default function Root({children}) {
   }
 
   return (
-    <p> Test flow </p>
-//     <React.Fragment>
-//       {isAllow() ? (
-//         <>{children}</>
-//       ) : (
-//         <div className="login">
-//           <div className="login__container">
-//             <button className="login__btn login__google" onClick={signInWithGoogle}>
-//               Login with Google
-//             </button>
-//           </div>
-//         </div>
-//       )}
-//     </React.Fragment>
+    <React.Fragment>
+      {isAllow() ? (
+        <>{children}</>
+      ) : (
+        <div className="login">
+          <div className="login__container">
+            <button className="login__btn login__google" onClick={signInWithGoogle}>
+              Login with Google
+            </button>
+          </div>
+        </div>
+      )}
+    </React.Fragment>
   );
 }
