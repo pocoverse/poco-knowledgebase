@@ -1,20 +1,20 @@
 name: Deploy to GitHub Pages
 
-on:
-  push:
-    branches:
+on: 
+  push: 
+    branches: 
       - master
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
-jobs:
-  deploy:
+jobs: 
+  deploy: 
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-        with:
+        with: 
           node-version: 18
           cache: yarn
 
@@ -27,7 +27,7 @@ jobs:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        with:
+        with: 
           github_token: ${{ secrets.DEPLOY_SECRET }}
           # Build output to publish to the `gh-pages` branch:
           publish_dir: ./build
