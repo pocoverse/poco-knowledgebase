@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from 'vcpoco.github.io/poco-knowledgebase/src/components/HomepageFeatures';
+import HomepageFeatures from 'http(s)://vcpoco.github.io/poco-knowledgebase/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
 
