@@ -15,7 +15,6 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/poco-knowledgebase/',
-  routeBasePath: '/poco-knowledgebase/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -49,6 +48,8 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        
+        routeBasePath: '/poco-knowledgebase/',
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
