@@ -1,0 +1,160 @@
+---
+sidebar_position: 1
+---
+
+# PRD|User Registration & Login
+
+## Why are we building?
+To access the benefits of pococare offerings, users have to register on the pococare platform using a verified mobile number or Email address.
+
+## Key Objectives:
+- Allow Indian users to register by verifying their mobile numbers
+- Allow international users to register by verifying their EMail Address.
+- Increase the number of registered users by easing the registration process. 
+
+## User Story :
+- Users can register on Pococare platform using their Email address/or Mobile Number*.
+- Users can login to Pococare platform using their Email address/Mobile Number*. 
+- Users can logout of the platform
+
+## User Type:
+- Registered Users: Users who have registered on the website by inserting the Name, Mobile Number & Email and validating the mobile number by OTP. 
+- Non-Registered users: Users who have inserted the Name, Mobile number, Email but have not verified the mobile number using OTP. 
+- Registering users: Users who visits the platform and are intending to register. 
+- Local users: Users living in India and trying to access pococare via Indian mobile number
+- International users: User living outside India and trying to register via Email Address
+
+## Features:
+- Sign Up on Pococare platform using Email Address or Mobile Number
+- Resend OTP to their EMail address or Mobile Number.
+- Login to the pococare platform using Email Address or Mobile Number
+- Logout of the platform and Land on login screen. 
+- Accepting Terms and Conditions & Privacy Policy.
+- Log Out of the pococare.
+
+## Screen Descriptions:
+|S.no|Screen Name| Description|
+|-|-|-|
+|1.|Registration Screen/|Create your POCOCARE account now Start your journey to be emergency ready by registering with your Email ID & Mobile number.<br />Name: <br />Email Address:<br /> Mobile Number: <br /> Company Name: <br /> City: <br />Pincode: <br />I agree to Terms & Conditions & Privacy Policy CTA: “Create Account” Already Registered|
+|2.|Login screen | Email Address: <br />Mobile Number: <br />Resend OTP in xx Seconds<br />Button: Login |
+|3.|Email Address verification screen|Text: Verify your Email address<br />OTP insert field<br />Resend OTP in “xx” seconds <br />CTA: “Verify”|
+|4.|Mobile Number verification screen|Text: Verify your MObile number <br />OTP insert field<br />Resend OTP in “xx” seconds<br />CTA: “Verify”|
+
+## User flow ##
+ ### New user registration: <br />
+  ** 1. User with Indian Mobile number: ** 
+     - User lands on Registration screen > Inputs Name > Email address >  Mobile Number > Company name > Select the city > Inserts Pincode > Checkbox the T&C (T&C Checkbox is Auto-checked) > Create Account > Lands on mobile OTP verification screen > Received OTP on mobile number > Insert OTP > Verify > Lands on beneficiary addition screen
+     - User lands on Registration screen > Inputs special characters in Name field > Display error message “No special characters allowed in Name”
+     - User lands on Registration screen > Inputs Name >Inputs Email address with public domain > Displays error message “Please use your company provided Email address 
+     - User lands on Registration screen > Inputs 9 or <10 digit mobile number > Starts writing company Name > Display error message, “Mobile number needs to be 10 digit. (This is for the Indian users with +91 as country code)
+
+ ** 2. User with Global Mobile number: ** 
+     - User lands on Registration screen > Inputs Name > Email address >  Selects the country flag and code from drop down in Mobile number input field > Input Mobile Number > Company name > Select the city > Inserts Pincode > Checkbox the T&C > Create Account > Lands on Email OTP verification screen > Received OTP on Email > Insert OTP > Verify > Lands on beneficiary addition screen
+     - User lands on Registration screen > Inputs special characters in Name field > Display error message “No special characters allowed in Name”
+     - User lands on Registration screen > Inputs Name >Inputs Email address with public domain > Displays error message “Please use your company provided Email address 
+     - User lands on Registration screen > Inputs 9 or <10 digit mobile number > Starts writing company Name > Display error message, “Mobile number needs to be 10 digit. (Error message needs to be in accordance with the respective country mobile number size)
+
+:::tip Note 
+ Currently all the users are getting their OTP on their Email address. Once the SMS vendor is closed, users can start to receive an OTP on Mobile Number.
+:::
+
+### Login for registered User: 
+
+**1. User validated using Mobile number** 
+     - Users who have added their Beneficiaries
+         - User lands on Login screen > Inputs Email address > Inputs the Mobile number > Lands on Insert OTP screen > Received OTP on mobile number > Input the OTP > Lands on home screen 
+
+    - User who have not added their beneficiaries (Those users who have not completed the Level 1 details of their beneficiary.Refer to Beneficiary Onboard PRD)      
+        - User who dropped off from the Beneficiary addition screen 
+             -User lands on Login screen > Inputs Email address > Inputs the Mobile number > Lands on Insert OTP screen > Received OTP on mobile number > Input the OTP > Lands on beneficiary addition screen
+        - User dropped off from the Beneficiary basic details addition screen:
+             -User lands on Login screen > Inputs Email address > Inputs the Mobile number > Lands on Insert OTP screen > Received OTP on mobile number > Input the OTP > Lands on Beneficiary basic details addition screen 
+              
+
+**2. User validated using Email Address**
+     - Users who have added their beneficiaries
+        - User lands on Login screen > Inputs Email address > Inputs the Mobile number > Lands on Insert OTP screen > Received OTP on Email address > Input the OTP > Lands on home screen
+
+     - User who have not added their beneficiaries.
+        - User dropped off from the Beneficiary addition screen while registering: 
+             User lands on Login screen > Inputs Email address > Inputs the Mobile number > Lands on Insert OTP screen > Received OTP on Email address > Input the OTP > Lands on beneficiary addition screen
+        - User dropped off from the Beneficiary basic details addition screen: 
+             User lands on Login screen > Inputs Email address > Inputs the Mobile number > Lands on Insert OTP screen > Received OTP on mobile number > Input the OTP > Lands on Beneficiary basic details addition screen
+        - Non-registered users are trying to login to Pococare platform 
+             Send them and Error message “ Please register to process” and direct them to registration screen. 
+
+
+### Logging out for the Platform
+
+**1. User logs off the platform ** 
+     - Home Screen > Account options > Logout > Lands on Login screen
+
+**2. User closes the window directly: (This is only when the user have already added their beneficiaries or Level 1 is complete, other wise follow the process mentioned above) **
+     
+     -Visits login.pococare.com > Lands on Home screen directly
+
+## Functional Requirements : ##
+
+- Keep the “Create Account” button disabled until all the input fields are filled. 
+- For the users selected, India as country under mobile number field, must insert 10 digit mobile number. 
+- Enable the “Create Account” button once all the data in input field is consistent and updated. 
+- Keep the “Verify” button on OTP verification screen disabled till all the digits are filled. 
+- OTPs can be sent to both Mobile number or Email Address provided.
+- Resend OTP button will be enabled after 30 seconds.
+- Once OTP input fields are filled, enable the “Verify” button. 
+- For the incorrect OTP filled by the user, clear the input field once the alert is displayed. 
+- Users can only insert numeric 6 digit values in the Pincode filled. 
+- For buttons/icons having drop down option, dropdown should collapse on re-clicking on the icon.
+
+## Design specifications
+ - [Wireframe](https://whimsical.com/pococare-registration-and-login-RtD9FMPuosBbgoHRBqjAUW)
+ - Design :
+
+## Technical Specifications
+- Front End:
+- Back End: 
+- Database: 
+- Authentication Api: 
+
+## Success Metrics
+- **North star **
+    - Number of Registered users
+
+- ** Proxy Metrics **
+    - Number of requested Metrics
+    - Number of users who did not insert OTP
+    - Number of users who fell off from the beneficiary addition screen.
+
+## Non-Functional requirements:
+- Users should be able to receive the OTP across all carriers. 
+- The platform should be able to handle 100+ users at a single time. (In future 100K users)
+- In case of any system failure, an email notification should be triggered. 
+- In case of non-scroll screens, the screen should fit the user’s screen size.
+- By default the flag/country code on the Mobile number input field should be India. 
+
+## Timelines
+
+
+## Release Criteria: 
+- Functionality:
+- Usability:
+- Reliability/Failure rate:
+- Performance:
+- Compatibility: The platform needs to be compatible with the Desktop, Chrome browser, Safari browser, Mobile devices both Android and iOS, and should be responsive enough to adjust as per the screen size of the user's device. 
+
+## Open questions
+- What if the user inserts the invalid email address or Mobile number?
+
+## Future features
+- Users can login via their social accounts like Gmail/Facebook
+- Differentiation in login for the B2B2C and B2C users.
+- Store cookies and session history of the users. 
+- WhatsApp to be used as a backup option to send the OTP. 
+- Once the error message/Alert is displayed to the user, clear the input field for the user. 
+- Alert the user if they insert incorrect pincode. Create a library of pincodes. 
+- Possibility that OTPs are landing in the spam folder. Message needs to be sent to check the OTP in spam. This will be in case the users request for resend the OTP on email address. 
+- Update the country code and Flag based on geo-location. 
+- All the beneficiary users can login to the Pococare platform and see the details of their family members. (Multi-login for same account)
+
+
+
