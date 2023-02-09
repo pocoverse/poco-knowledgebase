@@ -1,0 +1,71 @@
+---
+sidebar_position : 4
+---
+
+# PRD | Integration With Freshsales
+
+## Why are we building? 
+All the users information will be synced with the Freshsales platform to keep the regularly updated data. 
+
+
+## User Story
+
+- Registering user will be updated in the Freshsales as new contact. 
+- When a new family member is added by the registered users. 
+- User updates their information on Pococare platform and the data should be updated in the Freshsales platform. 
+- Agent is manually updating the user information, then the data should be synced across the Pococare & Freshsales platform (Refer to Freshsales to Freshdesk Integration PRD)
+- User is updating their information via any Forms over WhatsApp/Email/Google Form then the updated information should be synced between the Pococare Platform and Freshsales. 
+- User information can be deleted/Soft delete from the Freshales and Pococare platform based  on the requirements from our customers. 
+
+
+
+## User Type 
+
+- Registered Users
+- Beneficiary Users
+
+## Features 
+- Create a contact for every new registering user on Pococare platform
+- Create a contact for the new beneficiary users added on the pococare platform. 
+- Agents can identify the users for whom the data fields are filled/not filled
+- Agents can trigger WhatsApp/Emails to users based on their data. 
+- Information updated by the users on the pococare platform is synced with Freshsales
+- Freshsales and Freshdesk are synced to update the information updated by the agents in Freshdesk.
+
+
+## User Flow 
+- ### Creation of user information in Freshsales
+
+    - ** Registering Users ** 
+        - Users registers on the Pococare platform by verifying their email address/Mobile number 
+            A user is created in Freshsales as new contact. 
+
+    - ** Beneficiary Users **
+        - For all the family members added on the pococare platform > a user is created in Freshsales as a new contact. 
+
+    - ** Addition of users from the Backend (Exceptional case only) **
+        - New users updated in the pococare DB will be updated on the Freshsales
+
+    :::tip Note
+     Every new contact added on Freshsales will be identified using the Unique external ID, ie Unique Beneficiary ID.
+    :::
+
+    - ** Updation of user information **
+        - For all the beneficiaries, if any information is updated by the user on the pococare platform, the updated information should be synced with the Freshsales. 
+
+        - User updated the information via Forms sent over WhatsApp/Email, then the updated information should be in sync between the pococare platform and Freshsales. 
+
+    - ** Reading of user information ** 
+        - Agents can make an outbound call to user by reading the user information across Freshsales. 
+        - Agents can get the details of the information filled or Not filled by the users, and can trigger nudge messages to the users based on that to get the complete information from users. 
+
+
+## Non-Functional requirements:
+- Every user added as contact in Freshsales should be identified by a unique beneficiary ID. 
+- The sync between the Pococare platform and Freshsales should be real time basis. 
+- User field in Freshsales should be customisation with the user information pococare is collecting. 
+
+
+
+
+

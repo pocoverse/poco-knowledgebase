@@ -1,0 +1,83 @@
+---
+sidebar_position: 10
+---
+
+# PRD|Cab Software
+
+## Why are we building? 
+Communicating with the user is very critical for continuous innovation in the product and to update the users of the offerings and benefits available to them. 
+
+## Objective: 
+To send a welcome email to the users registered on the pococare platform. 
+
+## User Story: 
+- Users will get Welcome Email on adding their beneficiaries
+- Users will be nudged across Email/WhatsApp based on the amount of information they have provided to us. 
+
+## User Type:
+- Registered Users
+- Beneficiary Users
+
+## Features: 
+- Trigger an email to the users based on specific event
+
+## User Flow: 
+
+- ** New user onboarded: ** 
+     - User sign up > Add beneficiary > Lands on Home Screen > Welcome email triggered
+
+
+- ** Welcome Email details: ** 
+
+Subject: Welcome to Pococare
+
+Body:
+
+** Dear Name of Subscriber, **
+I want to take a second and not only thank you, but also congratulate you on making a GREAT decision towards taking care of your elderly dependents. 
+There are many areas where the elderly need assistance. Housekeeping, food, logistics, security, regular health monitoring, lab tests, medicine ordering, prescription compliance are top of the mind needs but the biggest concern is emergency management. Our experience has shown how inadequately prepared most of us are. In many cases, the typical response to an emergency is to call a friend, a neighbor or a relative. What follows is frantic running around and, in many cases, it is not money that is the issue but lack of preparedness. Ambulances may reach on time only to find that the elderly person is in a house on a higher floor without a lift. Medical records are not readily available and health insurance eligibility is not clearly available or understood. These are partial glimpses from actual incidents and not a figment of imagination. 
+When I founded Pococare the mission was to make the elderly population emergency ready. In addition to our emergency care services we are also happy to announce that we are adding services like groceries, laboratory tests, medicines, and legal assistance shortly. More to follow on this. 
+The Pococare heartbeat team will be reaching out to you shortly to confirm the registration details and answer any questions that you may have. In the interim, you may read the FAQ [here](https://drive.google.com/file/d/1zWXg0N-vxZTrggKzHtW7N7cFPX90syt-/view?usp=sharing). 
+Again, welcome to the Pococare family. We are excited to be of help to you!
+ 
+Signature: 
+Best regards,
+Rangarajan (Ranga)
+
+Founder & CEO,
+Positive Conversations Pvt Ltd,
+V.R. Chambers, No.26/2, 
+Outer Ring Road, Kadabisanahalli, 
+Bellandur Post, 
+Bangalore 560 103
+Phone: +91 8056066766
+Website: [www.pococare.com](http://www.pococare.com/)
+
+## Confidentiality: 
+This message contains CONFIDENTIAL INFORMATION intended solely for the use of the addressee(s) named above.  Any disclosure, distribution, copying or use of the information by others is strictly prohibited.  If you have received this message in error, please notify the sender by immediate reply and delete the original message.
+ 
+## Technical Specifications:
+[Raghavendra L Kulkarni](mailto:raghavendra.lk@pococare.com) Update over here.
+- Access credentials email account.  
+     Technically it should be the same as sender id.
+     We will try to use some other id and find any challenges.
+
+## Timelines:
+
+## Main tasks:
+- Email sending Create another micros service for notifications/communications. Try/test to find any challenges in using send id if different from account used for sending. <br />Deploy to cloud server in Azure
+
+- For existing live portal, daily once find the new registrations and send email.<br />Main sub tasks
+    - Import the data, 
+    - Find new records added in the existing system.
+    - Keep track of sent records
+    - Scheduler
+    - Deploy/Run data import and schedule from cloud server in Azure.
+
+- Effort estimation : about 2 to 3 days.
+
+- Timeline : By the end of the 15th October. 
+
+- After the above tasks : Trigger welcome email soon after registration (for new portal).
+
+

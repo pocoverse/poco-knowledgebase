@@ -1,0 +1,88 @@
+---
+sidebar_position : 5
+---
+
+# PRD | Integration with Freshdesk
+
+## Objective 
+To generate registration tickets for all the beneficiaries registered on the pococare platform. 
+
+## Why are we building? 
+
+
+## User Story
+- Ticket will be generated when the beneficiaries are added on the Pococare platform
+
+- Ticket will have defined properties like Category as Registration, Sub-Category as Subscriber Registration/Beneficiary Registration
+
+## User Type 
+- Pococare Agents
+- Pococare Supervisors/Administrators. 
+
+
+## Features 
+
+## User Flow 
+
+## Screen Descriptions
+
+|S.No|Screen Name|Description|
+|-|-|-|
+
+## Technical specifications
+- Front End 
+- Back End 
+- Database 
+- Authentication API
+
+## Success Metrics: 
+- North Star 
+
+- Proxy Metrics
+
+
+## Non-Functional requirements:
+
+## Timelines:
+
+:::tip Note:
+ type note here 
+:::
+
+
+## Ticket Generation in Freshdesk:
+ - User registers on Pococare platform, the user information is passed into Freshsales, and at the same time, Parent ticket is created in Freshdesk. 
+
+    - *** Concerns *** 
+        - When a ticket is created in Freshdesk, Freshdesk identifies if the user with same details is existing in the system or not? 
+        - If the user is not existing then the user is added in Freshdesk and then a ticket is generated. Over here, ticket type is defined as Parent ticket or Child ticket. If ticket type is parent ticket ie for the Registering user, then the unique variable will be Subscriber ID, and if the ticket type is child ticket, then the Unique identifier will be Beneficiary ID.  
+        - If we use beneficiary ID for a registering user as well, internally we will not be able to identify the family members linked with the particular registered users. 
+
+        :::tip Note: 
+        Freshsales and Freshdesk are having “Unique External ID” as a field, where we are putting Subscriber ID or Beneficiary ID as per the required condition.
+        :::
+
+        :::tip Note: 
+        When the registering user is updating themself as beneficiary, in that case the they will have both subscriber ID and Beneficiary ID. 
+        :::
+
+ - For all the family members added by the particular registering user, including self, a child ticket will be generated, with each ticket mapped with the respective users. 
+ Each child ticket will be linked with the respective parent ticket as well. Child ticket will be identified by Beneficiary ID.
+
+
+## Updating user information
+
+- User updates information on the Pococare platform, then the updated information is passed into Freshsales. Now the ticket status too needs to be updated ??<br /> <br />
+  Freshdesk looks into Freshsales and updates the ticket status/ticket property or Freshdesk looks into Pococare platform and updates the ticket status? <br /> <br />
+  Concern: For the earlier to happen, sync is not happening in real time basis, hence the ticket status will not be updated in real time. <br />
+  For the later, we have to send all the user information to freshdesk, so a new integration needs to be made between Pococare and  Freshdesk for real time updation if tickets.
+
+- User information is updated manually by Agent
+
+  Agent updates the user information in Freshdesk manually. Now the ticket status can be updated, but the updated information needs to move into Freshsales and Pococare platform accordingly .<br /> <br /> 
+
+  Concern: Freshdesk is not sending any update to the Pococare platform, hence all the information that the agent captures will be discarded. 
+  Solution by Raghu is to create a custom app for pococare in Freshdesk, where our agent will update or edit the user information and send the updated data to the pococare platform. 
+
+
+

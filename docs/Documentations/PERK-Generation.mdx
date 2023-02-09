@@ -1,0 +1,121 @@
+---
+sidebar_position: 9
+---
+
+# PRD | PERK Generation
+
+## Objective 
+To automate the PERK generation by leveraging the App script feature of Google Sheet. 
+
+## Why are we building?
+PERK Generation tool will help in creating and delivering an ERP for the subscribers & beneficiary at a faster pace as compared to now. 
+
+## Who are we building it for?
+The Operations team will use the PERK Automation tool to generate the PERK for beneficiaries registered on the Pococare platform.
+
+## Features
+- Fetch data from Google sheet
+- Data to be represented in the provided template order
+- Highlight the data in case more information is required
+- Create hyperlink for the links available in the PERK
+
+## Template
+- Template for the order of how the collected and processed data will be represented in the ERP.<br />[ERP_Template.pptx](https://docs.google.com/presentation/d/1oRh48QB1zxNnoAkGjCj0spVsWXEb8Ibi/edit#slide=id.p8) / [Reference-Template](https://docs.google.com/presentation/d/1CaUfs035Iu4PTtVFuj8JujYLDszytTlBIWREpBR_mQA/edit#slide=id.g162a845c73d_0_1)
+- Template of the Excel sheet in which all the collected and processed data will be updated for all the users. <br /> [ERP Data Source Template](https://docs.google.com/spreadsheets/d/1TqvWk3MvvP-v-Pv5fTQV_JzhXRR4j8fU3Xvi4sK07aU/edit#gid=0)
+- Sheet 2 of the above ERP Data Source Template contains the template for Hospital Mapping. 
+- Sheet 3 of ERP Data Source Template contains the ERP Tracker sheet with the link attached for all the ERPs generated. 
+
+## Generation of ERP
+- For every unique beneficiary, a new ERP file will be generated and the link for the same will be made available in the sub-sheet ERP tracker in the Data source sheet.
+- Based on the data available in the data source sheet, it will be fetched for the respective beneficiary. 
+- We have four types of data available with us: 
+    - Complete data provided by subscribers
+    - Incomplete data provided by subscribers
+    - Processed data provided by Pococare Ops team. 
+    - Constant data provided by the Pococare team. This includes slides for “How to use ERP” and “what to do in case of Emergency”. 
+
+- The ERP will include  the following  details:
+    - Basic Details
+    - Name of Beneficiary
+    - Age of beneficiary
+    - Gender of beneficiary
+    - Complete Address of Beneficiary
+ Based on the gender of the beneficiary, a respective image will be updated in the ERP. The image details will be provided by Sanket Jha 
+
+
+
+- Emergency Contact<br />
+ We will have two emergency contacts in the ERP. Primary emergency contact and Secondary Emergency. For respective emergency contacts, we will have the following details: 
+
+    - Name of Emergency contact
+    - Relation with the beneficiary
+    - WhatsApp of the emergency contact
+    - Mobile number of the emergency contact. 
+
+    Exceptions: In case the user does not provide the emergency contact details, it needs to be highlighted, “To be Updated”. 
+
+- Medical Profile <br />
+ Medical profile will have all the details regarding the current chronic conditions, past medical or surgical history of the beneficiary, and recent hospitalizations.  
+    - Chronic conditions
+    - Active Medications
+    - Allergy to Medications
+    - Past surgical/medical history
+    - Recent hospitalization
+    - Mobility
+
+
+Exceptions:
+
+ - In case a user has mentioned “Yes” under active medication, but has not provided the details of medicine, the missing data will be highlighted, for the user to provide more details for the same. 
+ - In case the user has mentioned “yes” under allergy to medication but has not provided details for which medicine they are allergic to; we must highlight for the user to provide more details. 
+ - For the recent hospitalization, if the user has mentioned, “yes” but not provided details/cause of hospitalization, that data will be highlighted. 
+ - Similarly for Past medical/surgical history and for differently abled.
+
+Any data for which the user has given a response, and the response is not sufficient, the incomplete/ missing data will be highlighted in the ERP. 
+
+
+## List of Hospitals:
+
+- For every beneficiary, the ops team is identifying all the nearby hospitals to which the beneficiary can be taken in case of emergency. 
+- For the case where one subscriber has multiple beneficiaries but from the same locations, the list of hospitals will be the same. 
+- In case one subscriber has multiple beneficiaries from multiple locations, the hospital list will be based on the location of a particular beneficiary. 
+- For every hospital, we will have a checklist of specialties and their certifications. 
+- The hospital listing sheet in the data source sheet will be mapped with the Beneficiary name, and will have address, distance, and specialty checklist available. 
+- Based on the beneficiary’s name, the hospital data will be fetched and will be represented in the ERP in a similar manner as in the template. 
+
+
+## How to use the ERP?
+The content of this slide is constant and will remain the same for all the beneficiaries. 
+
+## In case of Emergency, things to do:
+Content of this slide is constant and will remain the same for all the beneficiaries. 
+
+## Appendix
+- Appendix will comprise of the additional documents that the subscriber must have provided. This includes Prescription, Discharge summary, and Insurance policy document. 
+- ERP will have a link for all the documents that the user can access. The links need to be hyperlinked for each document. For e.g., For the prescription, the link will be hyperlinked as “Beneficiary Name e-Prescription”. 
+- In case user has not uploaded any documents, in that case the Appendix slide will be highlighted as “To be updated”
+
+
+## Technical specification: 
+App script feature of Google suite will be leveraged to create the document. 
+
+## Release criteria:
+- Functionality: Final ERP is generated based on the data available in the source sheet. 
+- Reliability: *** 80% reliability factor ***. We have to review the ERP generated before delivering them to the users. 
+
+## Timeline: 
+
+## Open questions?
+
+
+## Future features?
+
+- The ERP files generated should be saved in the respective ERP folders. 
+- The program should automatically detect the row and run the automation for it. 
+- In case of any edit in the beneficiary details in the source sheet, instead of creating a new file, the script should overwrite the existing file. 
+- Script can dynamically adjust the rows and columns in the hospital list sheet. 
+- Hospital list sheets should have a checkbox for the speciality that are available at respective hospitals. 
+- Automatically a new subscriber/beneficiary is added and the ERP should be generated for them. 
+
+
+
