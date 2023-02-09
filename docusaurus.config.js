@@ -82,18 +82,18 @@ const config = {
           src: 'img/pococarelogo.jpeg',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Contents',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/vcpoco/poco-knowledgebase',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          //   label: 'Tutorial',
+          // },
+          // {to: '/blog', label: 'Blog', position: 'left'},
+          // {
+          //   href: 'https://github.com/vcpoco/poco-knowledgebase',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
@@ -102,32 +102,20 @@ const config = {
           {
             title: 'Docs',
             items: [
-              {
-                label: 'Contents',
-                to: '/docs/intro',
-              },
             ],
           },
           {
             title: 'Community',
             items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://github.com/vcpoco/poco-knowledgebase',
-              },
-              {
-                label: 'Discord',
-                href: 'https://github.com/vcpoco/poco-knowledgebase',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://github.com/vcpoco/poco-knowledgebase',
-              },
             ],
           },
           {
             title: 'More',
             items: [
+              {
+                label: 'Tutorial',
+                to: '/docs/intro',
+              },
               {
                 label: 'Blog',
                 to: '/blog',
@@ -139,7 +127,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Positive Communications Pvy. Ltd.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Positive Communications Pvt. Ltd.`,
       },
       prism: {
         theme: lightCodeTheme,
