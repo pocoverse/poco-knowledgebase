@@ -1,0 +1,20 @@
+---
+sidebar_position: 3
+---
+
+# Test Suite | Emergency QR Code
+
+- Scanning the QR Code must take the user to “Pococare Emergency Page”
+- Page asks for location access
+    - Allow location access prompt must be displayed to the user
+	- In case of not available or GPS off state the user must be asked to enable location
+- Page Message: 
+            - “Hello from Pococare Heartbeat Team. Thank You for scanning the QR code for the registered beneficiary to notify an emergency. Please enter your 10 digit mobile number, our agent will call you right away. ”
+- Mobile number of the scanner must be taken
+	- Input must be 10 Digit Numeric
+- If the user puts in the phone number and clicks “Receive Call” before the countdown runs out. Scanner’s mobile number will be used for calling.
+- Scanner’s/First Responder’s number must be mentioned in the Ticket (FD)
+- 30s Countdown
+	- If the countdown expires the beneficiary number will be used for calling
+	- User must be redirected to Acknowledgement screen
+- Acknowledgement Screen: Message: Thank You Sir/Madam. Pococare heartbeat team has been alerted. We will call you to get more details.

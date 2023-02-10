@@ -1,0 +1,210 @@
+---
+sidebar_position: 2
+---
+
+# Test Suite | Add Beneficiary
+
+
+## Add Beneficiary Screen
+
+- List of relationships with checkbox to enable it 
+        - Father 
+        - Mother 
+        - Spouse  
+        - Daughter 
+        - Son 
+    - Check box against beneficiary relation will enable/disable the “Full Name” field
+    - Name field should not allow numbers or special characters except “spaces” and “.” and should be at least 3 characters long.
+
+- Buttons to add another Daughter & Son
+	-  Clicking on Daughter will add a Daughter and Son will add Son
+	-  Ability to remove the Son/Daughter fields created
+- Page message “Family members you want to make Emergency Ready”
+
+## Add Beneficiary Minimum Details Page or Beneficiary L1 Details screen
+
+-  All the beneficiaries added in the “Add Beneficiary” page must be listed with their names and relation with subscriber and fields of Phone Number, City and Pincode to be filled
+    -  Subscriber himself is a beneficiary with his Name, Relationship (Self), Mobile, City and Pincode pre-filled
+-  City name field should not allow numbers or special characters except “spaces” and should be at least 3 characters long.
+
+-  Pincode must be validated as per Indian Pincode system.
+
+-  Mobile field must accept valid mobile number ie. 10 digits. 
+	-  Mobile number field must not accept alphabets.
+	-  Country code prefix must be set by the user by selecting the country drop down.
+	-  Default country must be set to India (+91)
+-  “Save” button must be disabled till the required details are not filled and validated
+-  Users must be alerted of any wrong or empty field.
+-  Upon clicking “Save” button the user should be shown a success message and then redirected to “Home” screen
+-  Page message “Let us know more about your beneficiary/Beneficiaries”
+
+
+## Home screen
+
+-  UI Components
+    - Pococare logo positioned at top left corner. Should redirect to “Home” when clicked
+    - Account button positioned at top right corner. 
+    - Home button positioned at top right corner.
+    - Congratulations message 
+        “ Congratulations {Subscriber Name}. Welcome to the movement to make Indian Emergency ready. 
+        Your peace of mind assurance for the entire family.”
+    - Table of beneficiaries with Name, Relation, Mobile, City
+    - Message before Beneficiary cards “{Subscriber Name}’s Beneficiary/Beneficiaries, You have completed Level 1 details and can use the unique QR code in case of an actual emergency to reach us.”
+    - Beneficiary cards with Name, Avatar, Relation, QRCode & Edit button
+        - Clicking on the QRCode opens a popup and QRCode 2 (Emergency QRCode) is displayed.
+        - QRCode must be downloadable and printable from the pop up.
+        - Edit button launches the “Add Ben Full Details” page with the data from the database.
+    - Add Beneficiary button should launch the “Add Ben Full Details” page with empty fields.
+
+## Add Beneficiary Details Screen
+
+- UI Components
+    - Message “Please add the required details to help us to be there for you at all times. We need just 10 minutes of your precious time and we are also available over phone and WhatsApp to help you to fill the form.”
+    - Preview Profile CTA in top right corner.
+	    - 
+    - Form progress status on the left.
+        - On clicking on a Section heading the user needs to be taken to that portion of the form
+- Basic Details
+	- Profile pic on Top Right. 
+		- Upload/Change profile pic
+	- Relationship to the subscriber
+        - Mother 
+        - Father 
+        - Father-in-law 
+        - Mother-in-law 
+        - Grand Mother 
+        - Grand Father 
+        - Spouse 
+        - Son 
+        - Daughter 
+        - Son-in-law 
+        - Daughter-in-law 
+    - Full name: Name field should not allow numbers or special characters except “spaces” and “.” and  should be at least 3 characters long.
+    - Gender (Type Single select): Male, Female, Others
+    - Date of birth: Opens a date picker
+    - Email: Must accept valid email addresses xxx@domain.tld should be the format. 
+        - If an invalid email address is entered the user must be alerted on the window.
+	- Phone number: Mobile field must accept valid mobile number ie. 10 digits. 
+	    - Mobile number field must not accept alphabets.
+        - Country code prefix set by the user by selecting the country 
+	    - Default country must be set to India (+91)
+	- Toggle: “ WhatsApp number is same as Mobile Number”
+		- Toggle should hide/unhide another Mobile number field
+		- Toggle in ON state will set Mobile number as whatsapp number
+	- Employment Status: Radio button
+        - Full Time 
+        - Part Time 
+        - Retired 
+    - Save button should show a toast and navigate to next step in the form
+	- Next button will navigate to the next step in the form
+- Add Beneficiary Address: UI Components
+	- Address cards with details, edit and delete button
+    - Add Address button launches Address Form with Input fields
+        - Address Line 1
+        - Address Line 2
+        - Landmark
+        - City
+        - State
+        - Pincode
+        - *** Ambulance reachability ***
+        - *** Lift availability ***
+- Add Emergency Contacts: UI Components
+    - Full Name: Name field should not allow numbers or special characters except “spaces” and “.” and  should be at least 3 characters long.
+    - Relation with beneficiary. Drop down
+        - Mother 
+        - Father 
+        - Father-in-law 
+        - Mother-in-law 
+        - Grand Mother 
+        - Grand Father 
+        - Spouse 
+        - Son 
+        - Daughter 
+        - Son-in-law 
+        - Daughter-in-law 
+    - Email: Email field must accept valid email addresses xxx@domain.tld should be the format. 
+        - If an invalid email address is entered the user must be alerted on the window.
+	- Phone number: Mobile field must accept valid mobile number ie. 10 digits. 
+	    - Mobile number field must not accept alphabets.
+        - Default country must be set to India (+91)
+	- Toggle: “ WhatsApp number is same as Mobile Number”
+		- Toggle should hide/unhide another Mobile number field
+		- Toggle in ON state will set Mobile number as whatsapp number
+	- Set as priority contact Radio button.
+	- Emergency Contact Cards: 
+        - UI Content      
+            - Name of Emergency contact 
+            - Email address 
+            - Mobile Number 
+            - WhatsApp Number 
+            - Edit icon 
+            - Delete icon 
+        - Based on the priority set, each banner will have Primary as a tag. 
+- Add Medical History Step: 
+	- Chronic Conditions: Dropdown
+        - None 
+        - Type 2 Diabetes Mellitus 
+        - Hyper Tension 
+        - Heart Disease 
+        - Stroke 
+        - Cancer 
+        - Chronic Kidney Disease 
+        - Asthma 
+        - Epilepsy/Seizures 
+        - Cholesterol 
+        - Dialysis 
+        - Other 
+    - Current Medication: Radio: Yes/No
+		- If Yes, then text field to enter medication or upload prescription.
+	- Allergies to Medication: Radio: Yes/No/I don’t know
+		- Text box to enter
+    -  Past Medical/Surgical History: Radio: Yes/No
+        - If Yes, then text field to enter medication or upload prescription.
+    - Recent Hospitalization : Radio: Yes/No
+	    - If Yes, then text field to enter medication or upload prescription.
+	- Differently Abled : Radio: Yes/No
+	- If Yes, then text field to enter medication or upload prescription.
+	- Mobility Status : Dropdown
+        - Immobile (bed-ridden) 
+        - Mobile (Able to Move) 
+        - Assisted Mobility (Walker, Wheelchair) 
+
+
+- Add Insurance details Step
+	- Upload Insurance Document
+	- Policy ID
+		- Policy ID Alphanumeric.
+	- Name of Insurance Company
+		- Alphanumeric
+    - Insurance policy card with Policy ID, Name of Insurance Provider, Edit & Delete button
+- Add Preferred hospital Step
+	- Hospital Name must be Alphanumeric
+	- Speciality must be Alphanumeric
+	- Address
+	- Phone number: 10 Digit Numeric 
+	- Additional number: 10 Digit Numeric
+	- Submit and Previous buttons
+		- Submit button submits and saved all the form data
+		- Previous button navigates to the previous section of the form
+- Preview Profile
+	- Sections: 
+        - Name of Beneficiary
+            - Relation of Beneficiary with registering User
+        - Basic Information
+            - Email
+            - Mobile Number
+            - WhatsApp Number
+            - Gender
+            - Date of Birth
+            - Age (Either we should have DoB or Age)
+            - Employment Status
+        - Addresses
+            - Address Cards
+        - Emergency Contacts
+            - Contact Cards
+        - Medical Profile
+        - Insurance
+            - Cards
+        - Preferred Hospitals
+            - Cards
+    - Edit button to take the user to the Beneficiary Form

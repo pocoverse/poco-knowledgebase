@@ -1,0 +1,82 @@
+---
+sidebar_position : 1 
+---
+
+# Test Suite | User Registration & Login
+
+
+## Login Screen
+
+- Email field must accept valid email addresses xxx@domain.tld should be the format. 
+    - If an invalid email address is entered the user must be alerted on the window.
+
+- Mobile field must accept valid mobile number ie. 10 digits. 
+    - Mobile number field must not accept alphabets.
+    - Country code prefix must be set by the user by selecting the country drop down.
+    - Default country must be set to India (+91)
+
+- User to be identified uniquely by a combination of Mobile and Email, ie. A user cannot create a new account with already registered Mobile and a new Email ID or vice versa.
+- If the user is found to be unregistered the user should be shown a message to register first and then he must be navigated to the register screen with Email and Mobile populated.
+- Register button should navigate to “Register” page
+
+## Registration Screen
+
+- Message at the top of register screen “Create your POCOCARE account now Start your journey to be emergency ready by registering with your Email ID & Mobile number.”
+
+- Name field should not allow numbers or special characters except “spaces” and “.” and  should be at least 3 characters long.
+	
+- Email field must accept valid email addresses xxx@domain.tld should be the format. 
+	- If an invalid email address is entered the user must be alerted on the window.
+
+- Mobile field must accept valid mobile number ie. 10 digits. 
+	- Mobile number field must not accept alphabets.
+	- Country code prefix must be set by the user by selecting the country drop down.
+	- Default country must be set to India (+91)
+
+- Company name field should be at least 3 characters long.
+
+- City name field should not allow numbers or special characters except “spaces” and should be at least 3 characters long.
+
+- Pincode must be validated as per Indian Pincode system.
+
+- Login button must navigate the user to “Login” screen
+
+- Terms checkbox must be by default “Checked”. When the checkbox is not checked the “Register” button should be disabled.
+
+- Till all the fields in the form are valid the “Register” button should be inactive.
+
+- Terms and Privacy must be displayed in a pop up when clicked.
+
+- If the user is already registered, he must be shown an alert and redirected to the login page.
+
+- OTP must be sent to the email address.
+
+- CTA must be “Create Account” 
+
+## OTP Screen: 
+
+- OTP field should accept only numbers
+    - Resend button should appear after a 30s count down timer.
+    - Upon clicking the Resend button the OTP must be sent to the email address 
+and a success message should be shown to the user. Also Resend button should be replaced by a 30s countdown timer 
+    - “Validate OTP” button should be activated only after a 4 digit number is entered in the OTP field.
+    - When OTP is invalid the user should be shown a message and the input must be cleared.
+    - When OTP is valid the user should be taken to the next screen.
+	    - Registered user should be taken to beneficiary screen
+            - Users who have not filled L1 details should land at “Add Beneficiary” screen
+            - Users who have filled L1 details should be taken to “Home”
+	    - Unregistered user should be taken to “Add Beneficiary” screen
+
+## Registration QR Code:
+
+- Upon scanning the user must be redirected to register screen ie. https://login.pococare.com/register
+
+
+## Welcome Communication:
+
+- Welcome email should be sent once the OTP is verified.
+
+## Logout
+
+- User auth data must be cleared from the system and user is directed to “Login screen”
+
