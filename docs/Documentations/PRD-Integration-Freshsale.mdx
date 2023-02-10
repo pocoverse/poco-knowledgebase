@@ -36,28 +36,28 @@ All the users information will be synced with the Freshsales platform to keep th
 ## User Flow 
 - ### Creation of user information in Freshsales
 
-    - ** Registering Users ** 
-        - Users registers on the Pococare platform by verifying their email address/Mobile number 
-            A user is created in Freshsales as new contact. 
+- ** Registering Users ** 
+    - Users registers on the Pococare platform by verifying their email address/Mobile number 
+        A user is created in Freshsales as new contact. 
 
-    - ** Beneficiary Users **
-        - For all the family members added on the pococare platform > a user is created in Freshsales as a new contact. 
+- ** Beneficiary Users **
+    - For all the family members added on the pococare platform > a user is created in Freshsales as a new contact. 
 
-    - ** Addition of users from the Backend (Exceptional case only) **
-        - New users updated in the pococare DB will be updated on the Freshsales
+- ** Addition of users from the Backend (Exceptional case only) **
+    - New users updated in the pococare DB will be updated on the Freshsales
 
-    :::tip Note
-     Every new contact added on Freshsales will be identified using the Unique external ID, ie Unique Beneficiary ID.
-    :::
+:::tip Note
+ Every new contact added on Freshsales will be identified using the Unique external ID, ie Unique Beneficiary ID.
+:::
 
-    - ** Updation of user information **
-        - For all the beneficiaries, if any information is updated by the user on the pococare platform, the updated information should be synced with the Freshsales. 
+- ** Updation of user information **
+    - For all the beneficiaries, if any information is updated by the user on the pococare platform, the updated information should be synced with the Freshsales. 
 
-        - User updated the information via Forms sent over WhatsApp/Email, then the updated information should be in sync between the pococare platform and Freshsales. 
+    - User updated the information via Forms sent over WhatsApp/Email, then the updated information should be in sync between the pococare platform and Freshsales. 
 
-    - ** Reading of user information ** 
-        - Agents can make an outbound call to user by reading the user information across Freshsales. 
-        - Agents can get the details of the information filled or Not filled by the users, and can trigger nudge messages to the users based on that to get the complete information from users. 
+- ** Reading of user information ** 
+    - Agents can make an outbound call to user by reading the user information across Freshsales. 
+    - Agents can get the details of the information filled or Not filled by the users, and can trigger nudge messages to the users based on that to get the complete information from users. 
 
 
 ## Non-Functional requirements:
